@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Cessna 172 Skyhawk pre-flight checklist — mobile-friendly walkaround and cockpit checks">
+  <title>Cessna 172 Pre-Flight Checklist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header" id="header">
+      <div class="header-top">
+        <div class="header-titles">
+          <h1>Cessna 172 Skyhawk</h1>
+          <p class="subtitle">Pre-Flight Checklist</p>
+        </div>
+        <button type="button" class="btn btn-header" id="btnReset">Reset</button>
+      </div>
+      <div class="checklist-complete" id="checklistComplete" aria-live="polite" aria-hidden="true">
+        <span class="checklist-complete-icon" aria-hidden="true"></span>
+        <span class="checklist-complete-text">Preflight complete</span>
+      </div>
+      <div class="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" id="progressBar"></div>
+        <span class="progress-text" id="progressText">0%</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section" data-section="interior" aria-expanded="true">
+        <button type="button" class="section-header" aria-expanded="true" aria-controls="interior-list" id="btn-interior">
+          <span class="section-title">Preflight interior</span>
+          <span class="section-badge" id="badge-interior">0/18</span>
+          <span class="section-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="checklist" id="interior-list">
+          <li><label><input type="checkbox" data-id="airworthiness"> Airworthiness & documents (ARROW)</label></li>
+          <li><label><input type="checkbox" data-id="control-lock"> Control lock — remove</label></li>
+          <li><label><input type="checkbox" data-id="magnetos"> Magnetos — off</label></li>
+          <li><label><input type="checkbox" data-id="avionics"> Avionics (both) — off</label></li>
+          <li><label><input type="checkbox" data-id="master"> Master alt & bat — on</label></li>
+          <li><label><input type="checkbox" data-id="ext-lights"> Exterior lights — on, check, off</label></li>
+          <li><label><input type="checkbox" data-id="pitot-heat"> Pitot heat — on, check, off</label></li>
+          <li><label><input type="checkbox" data-id="pfd"> PFD — verify on</label></li>
+          <li><label><input type="checkbox" data-id="fuel-selector"> Fuel selector — both</label></li>
+          <li><label><input type="checkbox" data-id="fuel-shutoff"> Fuel shutoff — full in</label></li>
+          <li><label><input type="checkbox" data-id="oil-annun"> Oil press annunciator — shown</label></li>
+          <li><label><input type="checkbox" data-id="vac-annun"> Vac annunciator (if equipped) — shown</label></li>
+          <li><label><input type="checkbox" data-id="avionics-fans"> Avionics bus 1 & 2 fans — on, check, off</label></li>
+          <li><label><input type="checkbox" data-id="low-volts"> Low volts annunciator — shown</label></li>
+          <li><label><input type="checkbox" data-id="flaps"> Flaps — down</label></li>
+          <li><label><input type="checkbox" data-id="master-off"> Master alt & bat — off</label></li>
+          <li><label><input type="checkbox" data-id="elev-trim"> Elevator trim — takeoff</label></li>
+          <li><label><input type="checkbox" data-id="alt-static"> Alt static air valve — off (push full in)</label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="exterior" aria-expanded="true">
+        <button type="button" class="section-header" aria-expanded="true" aria-controls="exterior-list" id="btn-exterior">
+          <span class="section-title">Preflight exterior (walkaround)</span>
+          <span class="section-badge" id="badge-exterior">0/24</span>
+          <span class="section-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="checklist" id="exterior-list">
+          <li><label><input type="checkbox" data-id="cabin-door"> Cabin door — closed & secure</label></li>
+          <li><label><input type="checkbox" data-id="baggage"> Baggage door — locked</label></li>
+          <li><label><input type="checkbox" data-id="fuselage"> Fuselage — general condition</label></li>
+          <li><label><input type="checkbox" data-id="tail-tiedown"> Tail tiedown — disconnect</label></li>
+          <li><label><input type="checkbox" data-id="rudder-elevator"> Rudder & elevator — free & secure</label></li>
+          <li><label><input type="checkbox" data-id="elev-trim-tab"> Elevator trim tab — check</label></li>
+          <li><label><input type="checkbox" data-id="antennas"> Antennas — secure</label></li>
+          <li><label><input type="checkbox" data-id="right-aileron"> Right wing aileron & flap — check</label></li>
+          <li><label><input type="checkbox" data-id="right-tiedown"> Right wing tiedown — disconnect</label></li>
+          <li><label><input type="checkbox" data-id="right-tire"> Right main wheel tire — check (24 psi)</label></li>
+          <li><label><input type="checkbox" data-id="right-fuel"> Right wing fuel — drain sump, check quality</label></li>
+          <li><label><input type="checkbox" data-id="nose-sump"> Nose fuel sump — drain</label></li>
+          <li><label><input type="checkbox" data-id="engine-oil"> Engine oil — 6 qts min (5 qt min some models)</label></li>
+          <li><label><input type="checkbox" data-id="cooling"> Engine cooling inlets — clear</label></li>
+          <li><label><input type="checkbox" data-id="prop-spinner"> Propeller & spinner — condition</label></li>
+          <li><label><input type="checkbox" data-id="air-filter"> Air filter — check</label></li>
+          <li><label><input type="checkbox" data-id="nose-tire"> Nose tire & strut — check (26 psi)</label></li>
+          <li><label><input type="checkbox" data-id="static-port"> Static port — clear</label></li>
+          <li><label><input type="checkbox" data-id="stall-warning"> Stall warning — check</label></li>
+          <li><label><input type="checkbox" data-id="left-tiedown"> Left wing tiedown — disconnect</label></li>
+          <li><label><input type="checkbox" data-id="left-fuel"> Left wing fuel — drain sump, quantity</label></li>
+          <li><label><input type="checkbox" data-id="left-tire"> Left main wheel tire — check (24 psi)</label></li>
+          <li><label><input type="checkbox" data-id="left-aileron"> Left wing aileron & flap — check</label></li>
+          <li><label><input type="checkbox" data-id="pitot-cover"> Pitot tube cover — removed</label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="engine" aria-expanded="true">
+        <button type="button" class="section-header" aria-expanded="true" aria-controls="engine-list" id="btn-engine">
+          <span class="section-title">Engine run-up & before takeoff</span>
+          <span class="section-badge" id="badge-engine">0/12</span>
+          <span class="section-icon" aria-hidden="true"></span>
+        </button>
+        <ul class="checklist" id="engine-list">
+          <li><label><input type="checkbox" data-id="brakes"> Brakes — test</label></li>
+          <li><label><input type="checkbox" data-id="mag-l"> Magnetos — L, then R (drop check)</label></li>
+          <li><label><input type="checkbox" data-id="mag-both"> Magnetos — both</label></li>
+          <li><label><input type="checkbox" data-id="carb-heat"> Carb heat — check</label></li>
+          <li><label><input type="checkbox" data-id="throttle"> Throttle — idle cut-off check</label></li>
+          <li><label><input type="checkbox" data-id="instruments"> Engine instruments — green</label></li>
+          <li><label><input type="checkbox" data-id="flaps-to"> Flaps — set for takeoff</label></li>
+          <li><label><input type="checkbox" data-id="trim-to"> Trim — set for takeoff</label></li>
+          <li><label><input type="checkbox" data-id="fuel-both"> Fuel selector — both</label></li>
+          <li><label><input type="checkbox" data-id="doors"> Doors & windows — closed</label></li>
+          <li><label><input type="checkbox" data-id="transponder"> Transponder — as required</label></li>
+          <li><label><input type="checkbox" data-id="final"> Final walk-around — tie-downs, caps, level</label></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="disclaimer">Reference only. Use your aircraft POH and operator checklist.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
